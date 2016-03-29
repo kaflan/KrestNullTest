@@ -8,37 +8,36 @@ window.addEventListener('load', function load() {
         el.classList.add(cls);
         return el;
     }
-    var startGame = createElementAndClass('div', 'startGame');
-    var input = createElementAndClass("input", 'count');
-    var errorMessage = createElementAndClass('div', 'error-message');
-    var generateField = createElementAndClass('button', 'generateField', 'Создать поле');
-    var p = createElementAndClass('p', 'someclass');
-    var mainGame = createElementAndClass('div', 'mainGame');
+    var size = 3;
     var startNewGame = createElementAndClass('button', 'startNewGame', 'Начать новую игру');
-    var winner = createElementAndClass("div", 'winner-message');
+    var winner = createElementAndClass("div", 'winner-message', 'Начините игру');
     var field = createElementAndClass('div', 'field');
-    p.appendChild(input);
-    var start = id.appendChild(startGame);
-    var main = id.appendChild(mainGame);
-    start.appendChild(p);
-    start.appendChild(errorMessage);
-    start.appendChild(generateField);
-    main.appendChild(startNewGame);
-    main.appendChild(winner);
-    main.appendChild(field);
-    console.log(id);
+    var row, cell;
+    for(var i = 0; i < size; i++){
+        row = createElementAndClass('div', 'row');
+        field.appendChild(row);
+        for(var j = 0; j < size; j++){
+           cell = createElementAndClass('div','cell');
+           row.appendChild(cell); 
+        }
+    }
+    id.appendChild(startNewGame);
+    id.appendChild(field);    
+    id.appendChild(winner);
 });
 
 /*
-<!--<div class="startGame">
-    <p>Введите размер поля <input class="count"></p>
-    <div class="error-message"></div>
-    <button class="generateField">Создать поле</button>
-</div>
-<div class="mainGame">
-    <button class="startNewGame">Начать новую игру</button>
-    <div class="winner-message"></div>
-    <div class="field">
+<button class="startNewGame">Начать новую игру</button>
+<div class="winner-message"></div>
+<div class="field">
+    <div class="row">
+        <div class="cell x"></div><div class="cell o"></div><div class="cell x"></div>
     </div>
-</div>-->
+    <div class="row">
+        <div class="cell o"></div><div class="cell x"></div><div class="cell o"></div>
+    </div>
+    <div class="row">
+        <div class="cell x"></div><div class="cell o"></div><div class="cell x"></div>
+    </div>
+</div>
 */
