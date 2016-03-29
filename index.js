@@ -8,9 +8,9 @@ window.addEventListener('load', function load() {
   var i;
   var winner;
   var startNewGame = document.querySelector('.startNewGame');
+  field.style.display = 'none';
   function clickEvent(event) {
     event.preventDefault();
-    
     if ((event.target.classList.contains('x') || event.target.classList.contains('o')) || !event.target.classList.contains('cell') && event.target.classList.contains('field')) {
       return;
     }
@@ -31,6 +31,7 @@ window.addEventListener('load', function load() {
   }
 
   function clickNewGame(e) {
+      field.style.display = "block";
     e.preventDefault();
     for (i = 0; i < cellAll.length; i++) {
       cellAll[i].classList.remove('o');

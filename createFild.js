@@ -10,7 +10,7 @@ window.addEventListener('load', function load() {
     }
     var size = 3;
     var startNewGame = createElementAndClass('button', 'startNewGame', 'Начать новую игру');
-    var winner = createElementAndClass("div", 'winner-message', 'Начините игру');
+    var winner = createElementAndClass("div", 'winner-message', 'Нажмите "Начать новую игру" для игры');
     var field = createElementAndClass('div', 'field');
     var row, cell;
     for(var i = 0; i < size; i++){
@@ -22,8 +22,8 @@ window.addEventListener('load', function load() {
         }
     }
     id.appendChild(startNewGame);
-    id.appendChild(field);    
     id.appendChild(winner);
+    id.appendChild(field);    
 });
 
 /*
